@@ -1,4 +1,4 @@
-
+/*Desktop styles*/
 body{
     font-family: Georgia;
     margin: 0;
@@ -181,135 +181,103 @@ footer a{
     text-decoration: none;
 }
 
-/* Media query */
-    /*   
-        @media <device type> and (expression)
+/*Media Queries*/
+/*all screen devices is the device type*/
+/*Tablet*/
+@media screen and (max-width: 768px){
+   /*1*//*Bring the navigation to a new line so that we get the whole width and we are not competing with the logo */ 
+   header nav{
+    float: none;/* no longer floating over to the right*/
+    clear: left;/* to bring it down to the next line*/
+    width: 100%;
+   }
+   /*2*//* Now removing the space above the nav elements*/
+   header nav ul{
+    margin: 0;
+    padding: 0;
+   }
+   /*3*//*Take away margin from the logo and centralize it.*/
+   h1.logo{
+    margin: 10px auto 0;
+    float: none;
+   }
+   /*4*//*Centralize nav elements*/
+   header nav ul li{
+    margin: 10px 0;
+    width: 20%;/*Total 5 elements and 100% so 20% width per element*/
+    padding: 0;
+    text-align: center;
+   }
+   /*5*//*The skewer images are squashed a bit so lets edit that*/
+   #featured li{
+    width: 48%;
+   }
+   /*6*//*Declutter the footer*/
+   footer ul{
+    width: 48%;
+    text-align: center;
+   }
+}
+/*Most Mobile devices*/
+@media screen and (max-width: 480px){
+   /*2*/
+   .burger-nav{
+        display: block;
+        height: 40px;
+        width: 100%;
+        background: url(images/burger.png) no-repeat 98% center;
+        background-color: #404040;
+        cursor: pointer;
+   }
+   /*3*/
+   header .wrapper{
+    width: 100%;
+    padding: 0;
+   }
+   /*4*/
+   header nav ul{
+    overflow: hidden;
+    background: #505050;
+    height: 0;
+   }
+   /*5*/
+   header nav ul.open{
+    height: auto;
+   }
+   /*6*/
+   header nav ul li{
+    float: none;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+   }
+    /*7*/
+    header nav ul li a{
+        color: #fff;
+        padding: 10x;
+        border-bottom: 1px solid #404040;
+        display: block;
+        margin: 0;
+    }
+   #featured li{
+       margin: 20px 5%;
+       width: 90%;
+      }
+      
+      footer ul{
+       width: 98%;
+       text-align: center;
+      }
+      
+      #home-menu li{
+        float: none;
+        width: 96%;
+        margin: 30px 2% !important;
+      }
+      #main-banner img{
+       position: relative;
+        width: 180%;
+        left: -40%; 
+      }
+}
 
-            ex.
-                @media screen and (expression)
-    */
-
-    /* changes site to that of a tablet */
-        @media screen and (max-width: 768px) {
-            header nav{
-                float: none;
-                clear: left;
-                width: 100%;
-            }
-
-            header nav ul{
-                margin: 0;
-                padding: 0;
-            }
-
-            h1.logo{
-                margin: 10px auto 0;
-                float: none;
-            }
-
-            header nav ul li{
-                margin: 10px 0;
-                width: 20%;
-                padding: 0;
-                text-align: center;
-            }
-
-            #featured li{
-                width: 48%;
-            }
-
-            footer ul{
-                width: 48%;
-                text-align: center;
-            }
-        }
-     /*       
-    /* keeps images large when screen gets smaller
-            #featured li{
-                width: 46%;
-            }
-        }
-
-        @media screen and (max-width: 480px){
-            #featured li{
-                width: 92%;
-            }
-        }
-        */
-
-    /* Changes Lay to that of a phone */
-        @media screen and (max-width: 480px) {
-            /* Burger Nav */
-                .burger-nav{
-                    display: block;
-                    height: 40px;
-                    width: 100%;
-                    background: url(images/burger.png) no-repeat 98% center;
-                        /* no-repeat = only shows img once */
-                    background-color: #404040;
-                    cursor: pointer;
-                }
-            
-                header .wrapper{
-                    width: 100%;
-                    padding: 0;
-                }
-
-                header nav ul{
-                    overflow: hidden;
-                    background: #505050;
-                    height: 0;
-                }
-
-                header nav ul.open{
-                    height: auto;
-                }
-
-                header nav ul li{
-                    float: none;
-                    text-align: center;
-                    width: 100%;
-                    margin: 0;
-                }
-
-                header nav ul li a{
-                    color: white;
-                    padding: 10px;
-                    border-bottom: 1px solid #404040;
-                    display: block;
-                    margin: 0;
-                }
-            
-            #featured li{
-                margin: 20px 5%;
-                width: 90%;
-            }
-
-            footer ul{
-                width: 98%;
-                text-align: center;
-            }
-
-            #home-menu li{
-                float: none;
-                width: 96%;
-                margin: 30px 2% !important;
-                    /* overrides psudoe class rules */
-            }
-
-            #main-banner img{
-                position: relative;
-                    /* helps offset img */
-                
-                width: 180%;
-                left: -40%;
-
-            }
-        }
-
-
-
-/* Fluid Layouts */
-        /*
-            [insert num]% > [insert num]px
-        */
